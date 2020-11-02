@@ -56,20 +56,20 @@ addPhraseToDisplay(arrayPhrase);
 function checkLetter (button){
 
     //❏Store all of the li elements in a variable inside checkLetter
-    let checkLetter = document.querySelectorAll('li');
+    let checkLetter = document.querySelectorAll('.letter');
 
     //❏Create a variable to store if a match is found and give it an initial value of null
     let match = null; 
 
     //❏Loop through all of the li elements. Remember: arrays start with index
-    for (let i = 0; i < letter.length; i++){ 
+    for (let i = 0; i <  CheckLetter.length; i++){ 
 
         //❏Create a conditional that compares the text of the button parameter to
         //the text of the li at the current index of the loop
-         if(checkLetter[i] === button.textContent){
+         if(checkLetter[i].textContent === button.textContent){
              
            // ❏If they match, add the “show” class to the li
-            checkLetter[i].className = 'show'; 
+           checkLetter[i].classList.add('show');
 
             //❏If they match, store the button text in the match variable
             match = show;
