@@ -86,7 +86,7 @@ qwerty.addEventListener('click', (e) => {
     //❏ Use a conditional to filter out clicks that don’t happen on the buttons or if the
     //button already has the “chosen” class
     if(e.target.tagName === 'BUTTON') {
-        e.target.className === 'chosen';
+        e.target.className = 'chosen';
     } if (e.target.className === 'chosen') {
         e.target.disabled = 'true';
 
