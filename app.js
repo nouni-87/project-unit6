@@ -42,7 +42,7 @@ function addPhraseToDisplay (arr) {
         let ulList = document.querySelector('#phrase ul');
         liList.textContent = arr[i];
         ulList.appendChild(liList);
-            if (liList.textContent === '') {
+            if (liList.textContent === ' ') {
                 liList.className = 'space';
             } else {
                 liList.className = 'letter';
