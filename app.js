@@ -72,7 +72,7 @@ function checkLetter (button){
            checkLetter[i].classList.add('show');
 
             //❏If they match, store the button text in the match variable
-            match = show;
+            match = true;
          }
 
     }
@@ -97,7 +97,7 @@ qwerty.addEventListener('click', (e) => {
         //images and increment the missed counter
         if (resultFound === null) {
             missed ++;
-            tries[missed - 1].setAttribut(src = "images/lostHeart.png");
+            tries[missed - 1].src = "images/lostHeart.png";
         }
     }
 });
