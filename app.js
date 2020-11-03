@@ -63,7 +63,7 @@ function checkLetter (button){
     let match = null; 
 
     //❏Loop through all of the li elements. Remember: arrays start with index
-    for (let i = 0; i <  CheckLetter.length; i++){ 
+    for (let i = 0; i <  checkLetter.length; i++){ 
 
         //❏Create a conditional that compares the text of the button parameter to
         //the text of the li at the current index of the loop
