@@ -92,11 +92,11 @@ qwerty.addEventListener('click', (e) => {
         e.target.disabled = 'true';
 
         //❏ Call the checkLetter function and store the results in a variable.
-        let resultFound = checkLetter(e.target);
+        let letterFound = checkLetter(e.target);
 
         //❏ If the checkLetter function does not find a letter, remove one of the heart
         //images and increment the missed counter
-        if (resultFound === null) {
+        if (letterFound === null) {
             missed ++;
             tries[missed - 1].src = "images/lostHeart.png";
         }
