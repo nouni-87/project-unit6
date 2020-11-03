@@ -31,7 +31,7 @@ startGameBtn.addEventListener('click', () => {
 function getRandomPhraseAsArray(arr) {
         return arr[Math.floor(Math.random()*arr.length)].split('')
     }
-    const arrayPhrase = getRandomPhraseAsArray(phrases);
+    
 
 // ❏Add the letters of a sting to the display 
 
@@ -50,7 +50,8 @@ function addPhraseToDisplay (arr) {
             }
         }
 }
-addPhraseToDisplay(arrayPhrase);
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
 
 // ❏Create a checkletter function
 function checkLetter (button){
