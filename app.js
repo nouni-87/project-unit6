@@ -2,7 +2,7 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startGameBtn = document.querySelector('.btn__reset');
-const tries = document.querySelectorAll('img');
+const tries = document.querySelectorAll('.tries img');
 const div = document.getElementById('overlay');
 
 
@@ -97,7 +97,7 @@ qwerty.addEventListener('click', (e) => {
         //❏ If the checkLetter function does not find a letter, remove one of the heart
         //images and increment the missed counter
         if (letterFound === null) {
-            missed ++;
+            missed += 1;
             tries[missed - 1].src = "images/lostHeart.png";
         }
     }
@@ -105,9 +105,10 @@ qwerty.addEventListener('click', (e) => {
 
 //❏ Create a checkWin function
 function checkWin () {
+
 //❏ Create a variable to store the li elements that have the class name “letter”
 let letter = document.querySelectorAll('.letter');
-let show = document.getElementsByClassName('show'); 
+let show = document.querySelectorAll('.show'); 
 
 //❏ Check if the length of the 2 variables are the same. If they are, display the win
 //overlay and ❏ Create the win overlay by adding the “win” class to the start overlay.
@@ -115,24 +116,26 @@ if (letter.length === show.length) {
     overlay.className = 'win';
 
     //❏ Change the headline text of the start overlay to show a person won.
-    document.querySelector('h2.title').innerHTML = 'You win !';
+    document.querySelector('h2').innerHTML = 'You win !';
 
     //❏ Change the display property of the overlay to “flex”
-    overlay.style.display = "flex";
+    overlay.style.display = 'flex';
 
     //❏ Check if the missed counter is greater than 4. If they are, display the lose overlay
-    if(missed > 4) {
+} 
 
-        //❏ Create the lose overlay by adding the “lose” class to the start overlay.
-        overlay.className = 'lose';
+else if (missed >= 5) {
 
-       // ❏ Change the headline text of the start overlay to show a person lost.
-        document.querySelectorlector('h2.title').innerHTML = 'You lose !'
+    //❏ Create the lose overlay by adding the “lose” class to the start overlay.
+     overlay.className = 'lose';
 
-        //❏ Change the display property of the overlay to “flex”
-        overlay.style.display = "flex";
+    // ❏ Change the headline text of the start overlay to show a person lost.
+    document.querySelectorlector('h2').innerHTML = 'You lose !'
+
+    //❏ Change the display property of the overlay to “flex”
+    overlay.style.display = 'flex';
     }
     
-    checkWin();
+    
 }
-}
+
