@@ -138,6 +138,7 @@ else if (missed >= 5) {
     //❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
     }
+    
     overlay.querySelector('a').textContent = 'Try again!';
    restartButtonGame();
 }
@@ -154,5 +155,5 @@ for(let i = 0; i < keyBoardBtn.length; i++) {
     keyBoardBtn[i].disable = false;
 }
   ul.innerHTML = '';
-  addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+  
 }
