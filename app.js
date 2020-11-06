@@ -71,6 +71,7 @@ function checkLetter (button){
              
            // ❏If they match, add the “show” class to the li
            checkLetter[i].classList.add('show');
+          
 
             //❏If they match, store the button text in the match variable
             match = true;
@@ -101,6 +102,7 @@ qwerty.addEventListener('click', (e) => {
             tries[missed - 1].src = "images/lostHeart.png";
         }
     }
+    checkWin();
 });
 
 //❏ Create a checkWin function
@@ -110,13 +112,14 @@ function checkWin () {
 let letter = document.querySelectorAll('.letter');
 let show = document.querySelectorAll('.show'); 
 
+
 //❏ Check if the length of the 2 variables are the same. If they are, display the win
 //overlay and ❏ Create the win overlay by adding the “win” class to the start overlay.
 if (letter.length === show.length) {
     overlay.className = 'win';
 
     //❏ Change the headline text of the start overlay to show a person won.
-    document.querySelector('h2').innerHTML = 'You win !';
+    document.querySelector('h2').innerHTML = 'Congrats you win !';
 
     //❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
@@ -130,12 +133,26 @@ else if (missed >= 5) {
      overlay.className = 'lose';
 
     // ❏ Change the headline text of the start overlay to show a person lost.
-    document.querySelectorlector('h2').innerHTML = 'You lose !'
+    document.querySelector('h2').innerHTML = 'You lost try again !'
 
     //❏ Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
     }
-    
-    
+    overlay.querySelector('a').textContent = 'Try again!';
+   restartButtonGame();
 }
+ 
 
+
+function restartButtonGame () {
+  
+//Clear letters that previously were selected
+let keyBoardBtn = document.quesrySelectorAll('.keyrow');
+//Use a loop to reset keyboard
+for(let i = 0; i < keyBoardBtn.length; i++) {
+    keyBoardBtn[i].className = '';
+    keyBoardBtn[i].disable = false;
+}
+  ul.innerHTML = '';
+  addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+}
