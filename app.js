@@ -4,7 +4,7 @@ const phrase = document.getElementById('phrase');
 const startGameBtn = document.querySelector('.btn__reset');
 const tries = document.querySelectorAll('.tries img');
 const div = document.getElementById('overlay');
-
+const keyBoardBtn = document.querySelectorAll('.keyrow');
 
 
 
@@ -139,21 +139,38 @@ else if (missed >= 5) {
     overlay.style.display = 'flex';
     }
     
-    overlay.querySelector('a').textContent = 'Try again!';
-   restartButtonGame();
+    overlay.querySelector('a').textContent = 'Try again!'; 
+
 }
  
+ 
+startGameBtn.addEventListener ('click', (e) => {
+    
+    overlay.style.display = 'none';
 
-
-function restartButtonGame () {
+});   
+     
+    
+    function restartButtonGame () {
   
 //Clear letters that previously were selected
-let keyBoardBtn = document.quesrySelectorAll('.keyrow');
+    let keyBoardBtn = document.querySelectorAll('.keyrow button');
 //Use a loop to reset keyboard
-for(let i = 0; i < keyBoardBtn.length; i++) {
-    keyBoardBtn[i].className = '';
+
+    for(let i = 0; i < keyBoardBtn.length; i++) {
+    if (keyBoardBtn[i].className = '') {
     keyBoardBtn[i].disable = false;
 }
-  ul.innerHTML = '';
-  
+    document.querySelector('#phrase ul').innerHTML = '';
 }
+// Reset liveHearts
+    const liveHeart = document.getElementsByTagName('img');
+     
+    for (let i = 0; i < liveHeart.length; i++) {
+        let tries = document.querySelectorAll('tries');
+        tries[i].style.display = 'inline';
+    }
+   
+    
+}
+
