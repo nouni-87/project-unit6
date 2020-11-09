@@ -140,37 +140,44 @@ else if (missed >= 5) {
     }
     
     overlay.querySelector('a').textContent = 'Try again!'; 
-
+    restartButtonGame();
 }
  
- 
-startGameBtn.addEventListener ('click', (e) => {
+function restartButtonGame () {
+    startGameBtn.addEventListener ('click', (e) => {
     
     overlay.style.display = 'none';
 
-});   
-     
-    
-    function restartButtonGame () {
-  
 //Clear letters that previously were selected
     let keyBoardBtn = document.querySelectorAll('.keyrow button');
-//Use a loop to reset keyboard
 
-    for(let i = 0; i < keyBoardBtn.length; i++) {
+//Use a loop to reset keyboard
+ for(let i = 0; i < keyBoardBtn.length; i++) {
     if (keyBoardBtn[i].className = '') {
     keyBoardBtn[i].disable = false;
 }
-    document.querySelector('#phrase ul').innerHTML = '';
-}
-// Reset liveHearts
-    const liveHeart = document.getElementsByTagName('img');
-     
-    for (let i = 0; i < liveHeart.length; i++) {
-        let tries = document.querySelectorAll('tries');
-        tries[i].style.display = 'inline';
-    }
-   
-    
+ 
 }
 
+ document.querySelector('#phrase ul').innerHTML = '';
+    
+// remove the chosen class
+    const removeChosen = document.querySelectorAll('.chosen');
+    for(let i = 0; i<removeChosen.length; i++) {
+        removeChosen[i].classList.remove('chosen');
+        removeChosen[i].disabled = false;
+    }
+
+    addPhraseToDisplay(getRandomPhraseAsArray(phrases));  
+
+// Reset liveHearts
+    const liveHeart = document.getElementsByTagName('img');
+      for (let i = 0; i < liveHeart.length; i++) {
+        tries[i].src = "images/liveHeart.png";
+    }
+    
+    missed = 0;
+
+
+}); 
+}
