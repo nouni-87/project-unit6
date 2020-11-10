@@ -151,24 +151,15 @@ function restartButtonGame () {
 //Clear letters that previously were selected
     let keyBoardBtn = document.querySelectorAll('.keyrow button');
 
-//Use a loop to reset keyboard
- for(let i = 0; i < keyBoardBtn.length; i++) {
-    if (keyBoardBtn[i].className = '') {
-    keyBoardBtn[i].disable = false;
-}
- 
-}
+//Use a loop to reset keyboard and to remove the chosen class
+for (let i = 0; i < keyBoardBtn.length; i++) {
+    keyBoardBtn[i].removeAttribute('class');
+    keyBoardBtn[i].removeAttribute('disabled');
+  }
 
  document.querySelector('#phrase ul').innerHTML = '';
     
-// remove the chosen class
-    const removeChosen = document.querySelectorAll('.chosen');
-    for(let i = 0; i<removeChosen.length; i++) {
-        removeChosen[i].classList.remove('chosen');
-        removeChosen[i].disabled = false;
-    }
-
-    addPhraseToDisplay(getRandomPhraseAsArray(phrases));  
+ addPhraseToDisplay(getRandomPhraseAsArray(phrases));  
 
 // Reset liveHearts
     const liveHeart = document.getElementsByTagName('img');
